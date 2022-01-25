@@ -159,3 +159,5 @@ nome = 'Ford'; // erro, variável global
 delete Array.prototype; // erro, não deletável
 window.top = 200; // erro, não pode mudar
 const arguments = 3.14; // escrever em palavra reservada
+
+// Por padrão todo module está no modo estrito
