@@ -11,9 +11,10 @@ export default function initModal() {
         };
 
         function cliqueForaModal(event) {
-            // console.log(event.target)
-            // console.log(this, 'OBJETO')
+            console.log(event.target)
+            console.log(this, 'OBJETO')
             if(event.target === this) {
+                console.log(event.target)
                 toggleModal(event);
             }         
         }
