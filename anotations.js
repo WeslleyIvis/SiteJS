@@ -161,3 +161,12 @@ window.top = 200; // erro, não pode mudar
 const arguments = 3.14; // escrever em palavra reservada
 
 // Por padrão todo module está no modo estrito
+
+
+// setTimemout()
+//setTimeout(callback, tempo, arg1, arg2, ...) método assíncrono que ativa o callback após tempo. não existe garantia de que o código será executado exatamente após o tempo, pois o callback entra na fila e espera pela Call Stack estar vazia.
+
+function espera(texto) {
+    console.log(texto);
+}
+setTimeout(espera, 1000, 'Depois de 1s');
