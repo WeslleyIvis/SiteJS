@@ -292,3 +292,19 @@ body, h1, h2, ul, li, p, dd, dt, dl {
     opacity: 1;
     transform: translate3d(0, 0, 0);
   }
+
+  [data-semana]::after {
+    display: inline-block;
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: red;
+    border-radius: 50%;
+    margin-left: 4px;
+    border: 2px solid black;
+  }
+
+  [data-semana].aberto::after {
+    background: rgb(0, 223, 0);
+  }
+

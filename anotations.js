@@ -170,3 +170,140 @@ function espera(texto) {
     console.log(texto);
 }
 setTimeout(espera, 1000, 'Depois de 1s');
+
+setTimeout(() => {
+    console.log('Testanto')
+}, 1000)
+
+// Imediato
+// Se não passarmos o argumento de tempo ele irá assumir o valor 0 e entrará na fila imediatamente para ser executado. Podemos passar uma função anônima diretamente com argumento.
+
+setTimeout(() => {
+    console.log('Após 0s?');
+})
+
+
+// Loops e setTimeout
+// Um loop é executado rapidamente, em milissegundos. Se colocarmos um setTimeout dentro do loop, todos eles serão adicionados á Web Api praticamente no mesmo tempo. Um evento de setTimeout não espera o tempo do anterior acabar para inicar.
+
+setTimeout(() => {
+    console.log('Testando')
+}, 0);
+
+// Corrigindo Loop
+
+for(let i = 0; i < 20; i++) {
+    setTimeout(() => {
+        console.log(i);
+    }, 300 * i)
+}
+
+
+// This e WIndow
+// SetTimeout é um método do objeto WIndow. O valor this dentro do mesmo callback é uma referencia ao seu objeto no caso WIndow
+
+const btn = document.querySelector('button')
+btn.addEventListener('click', handleClick);
+
+function handleClick() {
+    setTimeout(fucntion() {
+        console.log(this)
+        this.classList.add('ative')
+    }, 1000) 
+}
+//Erro pois window.classList não existe
+
+function handleClick() {
+    setTimeout(() => {
+        console.log(this)
+        this.classList.add('ative')
+    }, 1000) 
+}
+
+
+//setInterval
+// setInveterval(callback, tempo, arg1, arg2, ...), irá ativar o callback toda vez que a quantidade de tempo passar.
+
+function loop(texto) {
+    console.log(texto);
+}
+setInterval(loop, 1000, 'Passou 1s')
+
+// loop a cada segundo
+let i = 0;
+setInterval(() => {
+    console.log(i++);
+}, 1000)
+
+
+// clearInterval
+// clearInterval(var), podemos parar um intervalo com o clearInterval. Para isso precisamos atribuir o setInterval a uma variável.
+
+const contarAte10 = setInterval(callback, 1000);
+
+let i = 0;
+function callback() {
+    console.log(i++);
+    if(i > 10) {
+        clearInterval(contarAte10);
+    }
+}
+
+// new Date()
+// o construtor Date cria um objeto contendo valores como mês, dia, ano, horário e MediaSession. A data é baseada no relógio interno do computador.
+
+const agora = new Date();
+agora;
+// Semana Mês Dia Ano HH:MS:SS GMT
+agora.getDate() // Dia
+agora.getDay() // Dia da Semana ex: 5 = fri
+agora.getMonth() // Nùmeros dia mês
+agora.getFullYear() // Ano
+agora.getHours() // Hora
+agora.getMinutes() // Minutos
+agora.getTime() // ms desde 1970
+agora.getUTCHours() - 3 //Brasília
+
+
+// getTime()
+// o método getTime() mostra o tempo total em milessegundos desde o dia 1 de janeiro 1970.
+
+const agora = new Date();
+agora.getTime(); //
+
+//total de dias desde 1 de janeiro de 1970
+const diasPassados = agora.getTime() / (24 * 60 * 60 * 1000);
+
+
+const agora = new Date();
+const futuro = new Date('Dec 24 2030 22:50')
+
+console.log(agora.getMonth())
+console.log(futuro)
+
+function tranformarDias(tempo){
+    return tempo / (24 * 60 * 60 * 1000);
+}
+
+
+console.log(tranformarDias(agora.getTime()));
+console.log(futuro.getTime());
+
+const diasAgora = tranformarDias(agora.getTime());
+const diasFuturo = tranformarDias(futuro.getTime());
+
+console.log(diasFuturo - diasAgora)
+
+// <form name="contato" id="contato">
+//   <label for="nome">Nome</label>
+//   <input type="text" name="nome" id="nome">
+//   <label for="email">Email</label>
+//   <input type="text" name="email" id="email">
+//   <label for="mensagem">Mensagem</label>
+//   <textarea name="mensagem" id="mensagem"></textarea>
+// </form>
+
+document.forms; // lista com os formulários
+document.forms.contato; // form com nome contato
+document.forms.contato.elements; // elements
+document.forms[0].elements[0].value; // valor do primeiro

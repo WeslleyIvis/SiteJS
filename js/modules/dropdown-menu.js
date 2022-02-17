@@ -5,7 +5,7 @@ export default function initDropdownMenu() {
 
     dropdownMenus.forEach(menu => {
         ['touchstart', 'click'].forEach(userEvent => {
-            console.log(userEvent)
+            // console.log(userEvent)
             menu.addEventListener(userEvent, handleClick);
         })
     })
