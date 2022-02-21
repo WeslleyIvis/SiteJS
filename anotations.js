@@ -306,4 +306,4 @@ console.log(diasFuturo - diasAgora)
 document.forms; // lista com os formulários
 document.forms.contato; // form com nome contato
 document.forms.contato.elements; // elements
-document.forms[0].elements[0].value; // valor do primeiro
+document.forms[0].elements[0].value; // valor do primeirot
