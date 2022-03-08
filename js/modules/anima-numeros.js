@@ -8,15 +8,18 @@ export default function initAnimaNumeros() {
             let start = 0;
     
             const timer = setInterval(() => {
-                start = start + incremento;
+                start += incremento;
                 numero.innerText = start;
-                if(start > total) {    
+                if (start > total) {    
                     numeros.innerText = total;
                     clearInterval(timer)
                 }
             }, 25 * Math.random())
         })
     }
+
+    let observer
+
     function handleMutation(mutation) {
         // console.log(mutation[0])
         if(mutation[0].target.classList.contains('ativo')) {
@@ -24,10 +27,10 @@ export default function initAnimaNumeros() {
             animaNumeros();
         }
     }   
+
+    observer = new MutationObserver(handleMutation)
     
     const obeserverTarget = document.querySelector('.numeros');
-    const observer = new MutationObserver(handleMutation)
-    
     observer.observe(obeserverTarget, {attributes: true});
 }
 
