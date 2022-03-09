@@ -18,7 +18,6 @@ export default function initFetchAnimais() {
             animaisJSON.forEach(animal => {
                 const divAnimal = createAnimal(animal);
                 numerosGrid.appendChild(divAnimal)
-                console.log(divAnimal)
             })
          initAnimaNumeros();
     } catch(erro) {
