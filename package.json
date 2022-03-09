@@ -1,0 +1,31 @@
+{
+  "name": "sitejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "build": "webpack --mode production ./js/script.js -o ./main.js",
+    "dev": "webpack --mode development --watch ./js/script.js -o ./main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WeslleyIvis/SiteJS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WeslleyIvis/SiteJS/issues"
+  },
+  "homepage": "https://github.com/WeslleyIvis/SiteJS#readme",
+  "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "babel-loader": "^8.2.3",
+    "eslint": "^8.10.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2"
+  }
+}

@@ -3,21 +3,21 @@ export default function initModal() {
     const botaoFechar = document.querySelector('[data-modal="fechar"]');
     const containerModal = document.querySelector('[data-modal="container"]');
 
+    function toggleModal(event) {
+        event.preventDefault();
+        containerModal.classList.toggle('ativo')
+    };
+
+    function cliqueForaModal(event) {
+        console.log(event.target)
+        console.log(this, 'OBJETO')
+        if(event.target === this) {
+            console.log(event.target)
+            toggleModal(event);
+        }         
+    }
 
     if(botaoAbrir && botaoFechar && containerModal) {
-        function toggleModal(event) {
-            event.preventDefault();
-            containerModal.classList.toggle('ativo')
-        };
-
-        function cliqueForaModal(event) {
-            console.log(event.target)
-            console.log(this, 'OBJETO')
-            if(event.target === this) {
-                console.log(event.target)
-                toggleModal(event);
-            }         
-        }
         botaoAbrir.addEventListener('click', toggleModal);
         botaoFechar.addEventListener('click', toggleModal);
         containerModal.addEventListener('click', cliqueForaModal)
