@@ -136,6 +136,7 @@ body, h1, h2, ul, li, p, dd, dt, dl {
     margin-top: 2rem;
     margin-bottom: .5rem;
     color: #E54;
+    cursor: pointer;
   }
   
   .faq-lista dt::before {
