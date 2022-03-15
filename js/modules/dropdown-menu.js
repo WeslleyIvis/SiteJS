@@ -4,6 +4,8 @@ export default class initDropdownMenu {
   constructor(dropdownMenus, events) {
     this.dropdownMenus = document.querySelectorAll(dropdownMenus);
 
+    //define touchstart e click como argumento padrão 
+    // de events caso o usuario n defina;
     if (events === undefined) this.events = ['touchstart', 'click']
     else this.events = events;
     
@@ -12,6 +14,8 @@ export default class initDropdownMenu {
     this.activeDropwdownMenu = this.activeDropwdownMenu.bind(this);
   }
   
+  // Ativa o dropdownmenu e adiciona
+  // a função que observa o clique fora dele
   activeDropwdownMenu(event) {
     event.preventDefault();
     const element = event.currentTarget
@@ -21,6 +25,7 @@ export default class initDropdownMenu {
     });
   }
 
+  // Adiciona os eventos ao dropdownmenu
   addDropdownMenusEvent() {
     this.dropdownMenus.forEach((menu) => {
       this.events.forEach((userEvent) => {
